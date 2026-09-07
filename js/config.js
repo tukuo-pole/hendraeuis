@@ -72,27 +72,20 @@ window.WEDDING = {
       title: "Top Moments",
       photos: [
         { src: "assets/img/gallery/g1.jpg",  caption: "The two of us" },
-        { src: "assets/img/gallery/g2.jpg",  caption: "Under one light" },
-        { src: "assets/img/gallery/g3.jpg",  caption: "The first steps" },
-        { src: "assets/img/gallery/g4.jpg",  caption: "Side by side" }
-      ]
-    },
-    {
-      title: "Our Favorite Memories",
-      photos: [
-        { src: "assets/img/gallery/g5.jpg",  caption: "In Sundanese white" },
-        { src: "assets/img/gallery/g6.jpg",  caption: "Behind the drape" },
-        { src: "assets/img/gallery/g7.jpg",  caption: "A quiet moment" },
-        { src: "assets/img/gallery/g8.jpg",  caption: "Walking into it" }
+        { src: "assets/img/gallery/g2.jpg",  caption: "Side by side" },
+        { src: "assets/img/gallery/g3.jpg",  caption: "Under one light" },
+        { src: "assets/img/gallery/g4.jpg",  caption: "The first steps" },
+        { src: "assets/img/gallery/g5.jpg",  caption: "Walking into it" }
       ]
     },
     {
       title: "Portraits",
       photos: [
-        { src: "assets/img/gallery/g9.jpg",  caption: "Him, and her shadow" },
-        { src: "assets/img/gallery/g10.jpg", caption: "Her, and his shadow" },
-        { src: "assets/img/gallery/g11.jpg", caption: "In motion" },
-        { src: "assets/img/gallery/g12.jpg", caption: "Just us" }
+        { src: "assets/img/gallery/g6.jpg",  caption: "Him, and her shadow" },
+        { src: "assets/img/gallery/g7.jpg",  caption: "Her, and his shadow" },
+        { src: "assets/img/gallery/g8.jpg",  caption: "A quiet moment" },
+        { src: "assets/img/gallery/g9.jpg",  caption: "Just us" },
+        { src: "assets/img/gallery/g10.jpg", caption: "In motion" }
       ]
     }
   ],

@@ -63,6 +63,16 @@
   var cover = $("#cover"), intro = $("#intro"), audio = $("#audio"), player = $("#player");
   var opened = false;
 
+  // Opening title hanya diputar sekali per tamu. Flag-nya bertahan walaupun
+  // tab ditutup, jadi tamu yang balik lagi langsung masuk ke hero.
+  var INTRO_KEY = "he_intro_seen";
+  function introSeen() {
+    try { return localStorage.getItem(INTRO_KEY) === "1"; } catch (e) { return false; }
+  }
+  function markIntroSeen() {
+    try { localStorage.setItem(INTRO_KEY, "1"); } catch (e) { /* storage diblokir */ }
+  }
+
   $("#openBtn").addEventListener("click", function () {
     if (opened) return;
     opened = true;
@@ -70,7 +80,8 @@
     startMusic();
     cover.classList.add("is-gone");
 
-    if (reduced) { finishIntro(); return; }
+    if (reduced || introSeen()) { finishIntro(); return; }
+    markIntroSeen();
 
     intro.classList.add("is-on");
     setTimeout(function () { intro.classList.add("is-out"); }, 3600);
