@@ -40,7 +40,7 @@ window.WEDDING = {
   trailer: {
     youtubeId: "",
     file: "",                                  // e.g. "assets/video/prewedding.mp4"
-    thumb: "assets/img/trailer-thumb.jpg"
+    thumb: "assets/img/trailer-thumb.webp"
   },
 
   /* ---------- MUSIC ---------- */
@@ -71,21 +71,21 @@ window.WEDDING = {
     {
       title: "Top Moments",
       photos: [
-        { src: "assets/img/gallery/g1.jpg",  caption: "The two of us" },
-        { src: "assets/img/gallery/g2.jpg",  caption: "Side by side" },
-        { src: "assets/img/gallery/g3.jpg",  caption: "Under one light" },
-        { src: "assets/img/gallery/g4.jpg",  caption: "The first steps" },
-        { src: "assets/img/gallery/g5.jpg",  caption: "Walking into it" }
+        { src: "assets/img/gallery/g1.webp",  caption: "The two of us" },
+        { src: "assets/img/gallery/g2.webp",  caption: "Us, and our shadows" },
+        { src: "assets/img/gallery/g3.webp",  caption: "Under one light" },
+        { src: "assets/img/gallery/g4.webp",  caption: "Walking into it" },
+        { src: "assets/img/gallery/g5.webp",  caption: "Side by side" }
       ]
     },
     {
-      title: "Portraits",
+      title: "The Second Look",
       photos: [
-        { src: "assets/img/gallery/g6.jpg",  caption: "Him, and her shadow" },
-        { src: "assets/img/gallery/g7.jpg",  caption: "Her, and his shadow" },
-        { src: "assets/img/gallery/g8.jpg",  caption: "A quiet moment" },
-        { src: "assets/img/gallery/g9.jpg",  caption: "Just us" },
-        { src: "assets/img/gallery/g10.jpg", caption: "In motion" }
+        { src: "assets/img/gallery/g6.webp",  caption: "Dressed in white" },
+        { src: "assets/img/gallery/g7.webp",  caption: "Him, and her shadow" },
+        { src: "assets/img/gallery/g8.webp",  caption: "Her, and his shadow" },
+        { src: "assets/img/gallery/g9.webp",  caption: "The first steps" },
+        { src: "assets/img/gallery/g10.webp", caption: "A quiet moment" }
       ]
     }
   ],
