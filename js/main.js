@@ -206,7 +206,7 @@
     },
     reception: {
       title: "Muhammad Hendrananta & Euis Herlina — Wedding Reception",
-      det: "Resepsi Pernikahan, 11.30–13.30 WIB. Kami menantikan kehadiran dan doa restu Anda."
+      det: "Resepsi Pernikahan, 11.00–13.00 WIB. Kami menantikan kehadiran dan doa restu Anda."
     }
   };
   $$("[data-cal]").forEach(function (b) {
