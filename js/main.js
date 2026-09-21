@@ -76,6 +76,10 @@
     var p = el.getAttribute("data-family") === "bride" ? B : G;
     el.innerHTML = "Keluarga " + esc(p.father) + "<br>&amp; " + esc(p.mother);
   });
+  $$("[data-times]").forEach(function (el) {
+    el.textContent = "Akad " + hhmm((W.akad || {}).start) + " \u00b7 Resepsi " +
+      hhmm((W.reception || {}).start) + " WIB";
+  });
   $$("[data-venue]").forEach(function (el) {
     el.innerHTML = esc(V.name) + "<small>" + esc(V.address) + "</small>";
   });
@@ -369,36 +373,49 @@
   }, { passive: true });
 
   /* ---------------------------------------------------------
-     TRAILER
+     TRAILER — diputar di tempat dari tombol hero
      --------------------------------------------------------- */
   var tr = W.trailer || {};
-  var trailerSec = $("#trailer"), vmodal = $("#vmodal"), vmBox = $("#vmBox");
-  var hasTrailer = !!(tr.youtubeId || tr.file);
+  var vmodal = $("#vmodal"), vmBox = $("#vmBox"), heroTrailer = $("#heroTrailer"), nudge = $("#nudge");
+  var musicWasOn = false, nudgeTimer;
 
-  if (hasTrailer) {
-    trailerSec.hidden = false;
-    if (tr.thumb) $("#trailerThumb").src = tr.thumb;
-  } else {
-    $$("[data-trailer-link]").forEach(function (a) { a.setAttribute("href", "#gallery"); });
-  }
+  if (!tr.youtubeId && !tr.file) heroTrailer.hidden = true;
 
-  $("#playTrailer").addEventListener("click", function () {
+  heroTrailer.addEventListener("click", function () {
     if (tr.youtubeId) {
       vmBox.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + tr.youtubeId +
         '?autoplay=1&rel=0" title="Official trailer" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';
-    } else if (tr.file) {
+    } else {
       vmBox.innerHTML = '<video src="' + tr.file + '" controls autoplay playsinline></video>';
-    } else { return; }
+    }
     vmodal.hidden = false;
     lockScroll();
-    if (!audio.paused) { audio.pause(); setPaused(true); }
+    musicWasOn = !audio.paused;
+    if (musicWasOn) { audio.pause(); setPaused(true); }
   });
+
   function closeVm() {
     vmodal.hidden = true; vmBox.innerHTML = "";
     unlockScroll();
+    if (musicWasOn) {
+      var p = audio.play();
+      if (p && p.catch) p.catch(function () { setPaused(true); });
+      setPaused(false);
+    }
+    nudge.hidden = false;
+    clearTimeout(nudgeTimer);
+    nudgeTimer = setTimeout(function () { nudge.hidden = true; }, 7000);
   }
   $("#vmClose").addEventListener("click", closeVm);
   vmodal.addEventListener("click", function (e) { if (e.target === vmodal) closeVm(); });
+
+  nudge.addEventListener("click", function () {
+    nudge.hidden = true;
+    $("#events").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+  });
+  window.addEventListener("scroll", function () {
+    if (!nudge.hidden && window.scrollY > window.innerHeight * 0.6) nudge.hidden = true;
+  }, { passive: true });
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") { if (!lb.hidden) closeLb(); if (!vmodal.hidden) closeVm(); }

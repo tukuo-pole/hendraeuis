@@ -38,8 +38,7 @@ window.WEDDING = {
   // Put a YouTube ID (e.g. "dQw4w9WgXcQ") OR a local file path in `file`.
   trailer: {
     youtubeId: "gFK-JnbZZvo",
-    file: "",                                  // e.g. "assets/video/prewedding.mp4"
-    thumb: "assets/img/trailer-thumb.webp"
+    file: ""                                   // e.g. "assets/video/prewedding.mp4"
   },
 
   /* ---------- MUSIC ---------- */
@@ -56,7 +55,7 @@ window.WEDDING = {
   ],
   gift: {
     recipient: "Muhammad Hendrananta / Euis Herlina",
-    address: "Jl. Cisanggiri II No.3, RT.3/RW.4, Petogogan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12170"              // leave "" to hide the physical-gift card
+    address: "Jl. Cisanggiri II No.3, RT.3/RW.4, Petogogan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12170"
   },
 
   /* ---------- RSVP / WISHES BACKEND ---------- */
