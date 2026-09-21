@@ -9,7 +9,7 @@ window.WEDDING = {
   groom: {
     short: "Hendra",
     full: "Muhammad Hendrananta",
-    father: "Bapak Eko Hari",
+    father: "Bapak Eko Hari Endrarto",
     mother: "Ibu Tita Anantasari",
     instagram: ""            // e.g. "hendrananta" — leave "" to hide the button
   },
@@ -24,10 +24,10 @@ window.WEDDING = {
   /* ---------- EVENT ---------- */
   // ISO time WITH the +07:00 offset. Do not change the offset.
   akad:      { start: "2026-11-28T08:00:00+07:00", end: "2026-11-28T10:00:00+07:00" },
-  reception: { start: "2026-11-28T11:30:00+07:00", end: "2026-11-28T13:30:00+07:00" },
+  reception: { start: "2026-11-28T11:00:00+07:00", end: "2026-11-28T13:00:00+07:00" },
 
   venue: {
-    name: "Arunika Eatery",
+    name: "Arunika",
     address: "Cigugur, Palutungan, Kuningan, Jawa Barat",
     maps: "https://maps.app.goo.gl/5AwnS6s3ytuk842fA",
     // Optional embedded map. Leave "" to hide the map frame.
@@ -38,7 +38,7 @@ window.WEDDING = {
   // Put a YouTube ID (e.g. "dQw4w9WgXcQ") OR a local file path in `file`.
   // Leave both empty ("") and the whole trailer section hides itself.
   trailer: {
-    youtubeId: "",
+    youtubeId: "gFK-JnbZZvo",
     file: "",                                  // e.g. "assets/video/prewedding.mp4"
     thumb: "assets/img/trailer-thumb.webp"
   },
@@ -52,18 +52,18 @@ window.WEDDING = {
 
   /* ---------- GIFT ---------- */
   banks: [
-    { bank: "BANK NAME",  name: "ACCOUNT NAME", number: "0000000000" },
-    { bank: "BANK NAME",  name: "ACCOUNT NAME", number: "0000000000" }
+    { bank: "BANK BCA",  name: "Muhammad hendrananta", number: "0012601644" },
+    { bank: "BANK MANDIRI",  name: "Euis Herlina", number: "1040006018209" }
   ],
   gift: {
     recipient: "Muhammad Hendrananta / Euis Herlina",
-    address: ""              // leave "" to hide the physical-gift card
+    address: "Jl. Cisanggiri II No.3, RT.3/RW.4, Petogogan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12170"              // leave "" to hide the physical-gift card
   },
 
   /* ---------- RSVP / WISHES BACKEND ---------- */
   // Paste the Google Apps Script /exec URL here (see apps-script/Code.gs + README).
   // Leave "" and the form will run in demo mode (nothing is saved).
-  apiUrl: "",
+  apiUrl: "https://script.google.com/macros/s/AKfycbwgOnOIFwAUHL1t6xKDnbjlNz4h2t0KH_q7h4zvhB1p_U6bnIZnq0l9KCiL5XcTkU9K2Q/exec",
 
   /* ---------- GALLERY ---------- */
   // Group photos into rails. Add or remove freely.
