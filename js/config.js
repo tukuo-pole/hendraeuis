@@ -36,7 +36,6 @@ window.WEDDING = {
 
   /* ---------- TRAILER ---------- */
   // Put a YouTube ID (e.g. "dQw4w9WgXcQ") OR a local file path in `file`.
-  // Leave both empty ("") and the whole trailer section hides itself.
   trailer: {
     youtubeId: "gFK-JnbZZvo",
     file: "",                                  // e.g. "assets/video/prewedding.mp4"
@@ -52,8 +51,8 @@ window.WEDDING = {
 
   /* ---------- GIFT ---------- */
   banks: [
-    { bank: "BANK BCA",  name: "Muhammad hendrananta", number: "0012601644" },
-    { bank: "BANK MANDIRI",  name: "Euis Herlina", number: "1040006018209" }
+    { bank: "Bank BCA",     name: "Muhammad Hendrananta", number: "0012601644" },
+    { bank: "Bank Mandiri", name: "Euis Herlina",         number: "1040006018209" }
   ],
   gift: {
     recipient: "Muhammad Hendrananta / Euis Herlina",
@@ -62,7 +61,6 @@ window.WEDDING = {
 
   /* ---------- RSVP / WISHES BACKEND ---------- */
   // Paste the Google Apps Script /exec URL here (see apps-script/Code.gs + README).
-  // Leave "" and the form will run in demo mode (nothing is saved).
   apiUrl: "https://script.google.com/macros/s/AKfycbwgOnOIFwAUHL1t6xKDnbjlNz4h2t0KH_q7h4zvhB1p_U6bnIZnq0l9KCiL5XcTkU9K2Q/exec",
 
   /* ---------- GALLERY ---------- */
@@ -88,12 +86,5 @@ window.WEDDING = {
         { src: "assets/img/gallery/g10.webp", caption: "A quiet moment" }
       ]
     }
-  ],
-
-  /* ---------- FALLBACK WISHES ---------- */
-  // Shown before/if the backend has no data yet. Delete entries once live.
-  seedWishes: [
-    { name: "Keluarga Besar Cigugur", stars: 5, message: "Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fi khair." },
-    { name: "Teman-teman Bandung",    stars: 5, message: "Selamat menempuh hidup baru. Semoga sakinah, mawaddah, warahmah." }
   ]
 };

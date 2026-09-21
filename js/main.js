@@ -38,6 +38,50 @@
   }
 
   /* ---------------------------------------------------------
+     ISI HALAMAN DARI CONFIG — config.js satu-satunya sumber data
+     --------------------------------------------------------- */
+  var G = W.groom || {}, B = W.bride || {}, V = W.venue || {};
+
+  function pick(path) {
+    return path.split(".").reduce(function (o, k) { return o ? o[k] : ""; }, W) || "";
+  }
+  // "2026-11-28T11:00:00+07:00" -> "11.00", dibaca langsung dari teks
+  // supaya jamnya tetap WIB walaupun zona waktu HP tamu berbeda
+  function hhmm(iso) {
+    var m = /T(\d{2}):(\d{2})/.exec(iso || "");
+    return m ? m[1] + "." + m[2] : "";
+  }
+  function timeRange(key) {
+    var ev = W[key] || {};
+    return hhmm(ev.start) + " \u2013 " + hhmm(ev.end) + " WIB";
+  }
+
+  var COUPLE = {
+    full:    esc(G.full) + "<span>&amp;</span>" + esc(B.full),
+    stacked: esc(G.short) + "<span>&amp;</span>" + esc(B.short),
+    title:   "<span>" + esc(G.short) + "</span><em>&amp;</em><span>" + esc(B.short) + "</span>",
+    short:   esc(G.short) + " &amp; " + esc(B.short)
+  };
+
+  $$("[data-bind]").forEach(function (el) { el.textContent = pick(el.getAttribute("data-bind")); });
+  $$("[data-alt]").forEach(function (el) { el.alt = pick(el.getAttribute("data-alt")); });
+  $$("[data-time]").forEach(function (el) { el.textContent = timeRange(el.getAttribute("data-time")); });
+  $$("[data-couple]").forEach(function (el) { el.innerHTML = COUPLE[el.getAttribute("data-couple")] || ""; });
+  $$("[data-parents]").forEach(function (el) {
+    var isBride = el.getAttribute("data-parents") === "bride", p = isBride ? B : G;
+    el.innerHTML = (isBride ? "Putri dari" : "Putra dari") +
+      "<br><b>" + esc(p.father) + "</b> &amp; <b>" + esc(p.mother) + "</b>";
+  });
+  $$("[data-family]").forEach(function (el) {
+    var p = el.getAttribute("data-family") === "bride" ? B : G;
+    el.innerHTML = "Keluarga " + esc(p.father) + "<br>&amp; " + esc(p.mother);
+  });
+  $$("[data-venue]").forEach(function (el) {
+    el.innerHTML = esc(V.name) + "<small>" + esc(V.address) + "</small>";
+  });
+  $("#fMessage").placeholder = "Leave a message for " + G.short + " & " + B.short + "\u2026";
+
+  /* ---------------------------------------------------------
      GUEST NAME FROM URL  ( ?to=Bapak%20Ananta )
      --------------------------------------------------------- */
   function getGuest() {
@@ -55,7 +99,7 @@
   var initial = (guest || "T").replace(/^(bapak|ibu|bpk|sdr|sdri|saudara|saudari|mr|mrs|ms)\.?\s+/i, "").trim().charAt(0).toUpperCase() || "T";
   $("#avatarInitial").textContent = initial;
   $("#navAvatar").textContent = initial;
-  if (guest) document.title = guest + " — Hendra & Euis · 28.11.2026";
+  if (guest) document.title = guest + " — " + G.short + " & " + B.short + " · 28.11.2026";
 
   /* ---------------------------------------------------------
      COVER → INTRO → INVITATION
@@ -199,14 +243,15 @@
     // ISO with +07:00 → UTC basic format YYYYMMDDTHHMMSSZ
     return new Date(iso).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
   }
+  var coupleFull = G.full + " & " + B.full;
   var CAL = {
     akad: {
-      title: "Muhammad Hendrananta & Euis Herlina — Akad Nikah",
-      det: "Akad Nikah, 08.00–10.00 WIB. Kami menantikan kehadiran dan doa restu Anda."
+      title: coupleFull + " — Akad Nikah",
+      det: "Akad Nikah, " + timeRange("akad") + ". Kami menantikan kehadiran dan doa restu Anda."
     },
     reception: {
-      title: "Muhammad Hendrananta & Euis Herlina — Wedding Reception",
-      det: "Resepsi Pernikahan, 11.00–13.00 WIB. Kami menantikan kehadiran dan doa restu Anda."
+      title: coupleFull + " — Wedding Reception",
+      det: "Resepsi Pernikahan, " + timeRange("reception") + ". Kami menantikan kehadiran dan doa restu Anda."
     }
   };
   $$("[data-cal]").forEach(function (b) {
@@ -534,9 +579,9 @@
      --------------------------------------------------------- */
   $("#shareBtn").addEventListener("click", function () {
     var url = location.origin + location.pathname;
-    var text = "Undangan pernikahan Muhammad Hendrananta & Euis Herlina — Sabtu, 28 November 2026, Arunika Eatery.";
+    var text = "Undangan pernikahan " + G.full + " & " + B.full + " — Sabtu, 28 November 2026, " + V.name + ".";
     if (navigator.share) {
-      navigator.share({ title: "Hendra & Euis", text: text, url: url }).catch(function () { });
+      navigator.share({ title: G.short + " & " + B.short, text: text, url: url }).catch(function () { });
     } else {
       window.open("https://wa.me/?text=" + encodeURIComponent(text + "\n" + url), "_blank", "noopener");
     }
