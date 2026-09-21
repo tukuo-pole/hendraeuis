@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hendra &amp; Euis — 28 November 2026</title>
 
-<meta name="description" content="The Premiere of Our Forever. Undangan pernikahan Muhammad Hendrananta &amp; Euis Herlina — Sabtu, 28 November 2026, Arunika Eatery.">
+<meta name="description" content="The Premiere of Our Forever. Undangan pernikahan Muhammad Hendrananta &amp; Euis Herlina — Sabtu, 28 November 2026, Arunika.">
 <meta name="theme-color" content="#080808">
 <meta name="robots" content="noindex">
 
@@ -13,7 +13,7 @@
 <meta property="og:locale" content="id_ID">
 <meta property="og:site_name" content="Hendra &amp; Euis">
 <meta property="og:title" content="The Premiere of Our Forever — Hendra &amp; Euis">
-<meta property="og:description" content="Sabtu, 28 November 2026 · Arunika Eatery. Kami mengundang Anda untuk menyaksikan awal babak baru kami.">
+<meta property="og:description" content="Sabtu, 28 November 2026 · Arunika. Kami mengundang Anda untuk menyaksikan awal babak baru kami.">
 <meta property="og:image" content="assets/og/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -38,7 +38,7 @@
   <div class="cover__inner">
     <div class="cover__head">
       <p class="cover__eyebrow">Wedding invitation of</p>
-      <p class="cover__couple">Muhammad Hendrananta<span>&amp;</span>Euis Herlina</p>
+      <p class="cover__couple" data-couple="full"></p>
     </div>
 
     <h1 class="cover__title">Who&rsquo;s watching?</h1>
@@ -66,7 +66,7 @@
   <div class="intro__stage">
     <p class="intro__l1">A Hendra &amp; Euis Original</p>
     <p class="intro__l2">The wedding of</p>
-    <p class="intro__l3">Muhammad Hendrananta<span>&amp;</span>Euis Herlina</p>
+    <p class="intro__l3" data-couple="full"></p>
     <p class="intro__l4">28.11.2026</p>
   </div>
 </div>
@@ -105,7 +105,7 @@
   <div class="hero__body">
     <p class="original">H<span>&amp;</span>E Original</p>
 
-    <h2 class="hero__title"><span>Hendra</span><em>&amp;</em><span>Euis</span></h2>
+    <h2 class="hero__title" data-couple="title"></h2>
 
     <ul class="meta">
       <li class="meta--match">99% Match</li>
@@ -119,7 +119,7 @@
 
     <p class="hero__desc">Two lives, countless memories, and one beautiful promise. Hendra and Euis are ready to begin their greatest chapter together.</p>
 
-    <p class="hero__when"><b>Saturday, 28 November 2026</b><br>Arunika Eatery</p>
+    <p class="hero__when"><b>Saturday, 28 November 2026</b><br><span data-bind="venue.name"></span></p>
 
     <div class="hero__actions">
       <a href="#trailer" class="btn btn--primary" data-trailer-link>
@@ -161,22 +161,22 @@
 
   <div class="cast__grid">
     <article class="person" id="personGroom">
-      <div class="person__media"><img src="assets/img/groom.webp" alt="Muhammad Hendrananta" loading="lazy" decoding="async"></div>
+      <div class="person__media"><img src="assets/img/groom.webp" data-alt="groom.full" alt="" loading="lazy" decoding="async"></div>
       <div class="person__body">
         <p class="person__role">The groom</p>
-        <h3 class="person__name">Muhammad Hendrananta</h3>
-        <p class="person__parents">Putra dari<br><b>Bapak Eko Hari</b> &amp; <b>Ibu Tita Anantasari</b></p>
+        <h3 class="person__name" data-bind="groom.full"></h3>
+        <p class="person__parents" data-parents="groom"></p>
       </div>
     </article>
 
     <p class="cast__amp" aria-hidden="true">&amp;</p>
 
     <article class="person" id="personBride">
-      <div class="person__media"><img src="assets/img/bride.webp" alt="Euis Herlina" loading="lazy" decoding="async"></div>
+      <div class="person__media"><img src="assets/img/bride.webp" data-alt="bride.full" alt="" loading="lazy" decoding="async"></div>
       <div class="person__body">
         <p class="person__role">The bride</p>
-        <h3 class="person__name">Euis Herlina</h3>
-        <p class="person__parents">Putri dari<br><b>Bapak Caswan Ocim</b> &amp; <b>Ibu Rasminah</b></p>
+        <h3 class="person__name" data-bind="bride.full"></h3>
+        <p class="person__parents" data-parents="bride"></p>
       </div>
     </article>
   </div>
@@ -213,8 +213,8 @@
       <h3 class="ev__title">Akad Nikah</h3>
       <p class="ev__day">Saturday</p>
       <p class="ev__date"><b>28</b><span>November<br>2026</span></p>
-      <p class="ev__time">08.00 &ndash; 10.00 WIB</p>
-      <p class="ev__venue">Arunika Eatery<small>Cigugur, Palutungan, Kuningan</small></p>
+      <p class="ev__time" data-time="akad"></p>
+      <p class="ev__venue" data-venue="card"></p>
       <div class="ev__actions">
         <a class="btn btn--primary btn--sm" href="#" data-maps target="_blank" rel="noopener">Open location</a>
         <button class="btn btn--ghost btn--sm" data-cal="akad">Add to calendar</button>
@@ -226,8 +226,8 @@
       <h3 class="ev__title">Wedding Reception</h3>
       <p class="ev__day">Saturday</p>
       <p class="ev__date"><b>28</b><span>November<br>2026</span></p>
-      <p class="ev__time">11.30 &ndash; 13.30 WIB</p>
-      <p class="ev__venue">Arunika Eatery<small>Cigugur, Palutungan, Kuningan</small></p>
+      <p class="ev__time" data-time="reception"></p>
+      <p class="ev__venue" data-venue="card"></p>
       <div class="ev__actions">
         <a class="btn btn--primary btn--sm" href="#" data-maps target="_blank" rel="noopener">Open location</a>
         <button class="btn btn--ghost btn--sm" data-cal="reception">Add to calendar</button>
@@ -239,13 +239,13 @@
 <!-- ══════════ VENUE ══════════ -->
 <section class="venue" id="venue">
   <div class="venue__media">
-    <img src="assets/img/venue.webp" alt="Arunika Eatery" loading="lazy" decoding="async">
+    <img src="assets/img/venue.webp" data-alt="venue.name" alt="" loading="lazy" decoding="async">
     <div class="venue__scrim"></div>
   </div>
   <div class="venue__body">
     <p class="label">The venue</p>
-    <h2 class="venue__name">Arunika Eatery</h2>
-    <p class="venue__addr">Cigugur, Palutungan, Kuningan<br>Jawa Barat</p>
+    <h2 class="venue__name" data-bind="venue.name"></h2>
+    <p class="venue__addr" data-bind="venue.address"></p>
     <p class="venue__date">Saturday, 28 November 2026</p>
     <a class="btn btn--primary" href="#" data-maps target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg>
@@ -282,7 +282,7 @@
 <section class="quote">
   <blockquote>
     <p>Of all the stories in the world, ours is the one we would watch on repeat.</p>
-    <cite>Hendra &amp; Euis<span>28.11.2026</span></cite>
+    <cite><b data-couple="short"></b><span>28.11.2026</span></cite>
   </blockquote>
 </section>
 
@@ -316,7 +316,7 @@
 
     <label class="field">
       <span>Ucapan &amp; doa</span>
-      <textarea id="fMessage" name="message" rows="4" placeholder="Leave a message for Hendra &amp; Euis…"></textarea>
+      <textarea id="fMessage" name="message" rows="4" placeholder=""></textarea>
     </label>
 
     <button class="btn btn--primary btn--lg btn--block" type="submit" id="rsvpSubmit">Send RSVP</button>
@@ -343,22 +343,22 @@
 <section class="credits" id="credits">
   <div class="credits__roll" id="creditsRoll">
     <p class="credits__thanks">Thanks for watching</p>
-    <p class="credits__names">Hendra<span>&amp;</span>Euis</p>
+    <p class="credits__names" data-couple="stacked"></p>
 
     <p class="credits__body">Pernikahan kami tidak akan lengkap tanpa orang-orang yang telah menjadi bagian dari hidup kami. Terima kasih telah menemani kami memulai babak baru ini.</p>
 
-    <p class="credits__when">Saturday, 28 November 2026<br>Arunika Eatery</p>
+    <p class="credits__when">Saturday, 28 November 2026<br><span data-bind="venue.name"></span></p>
 
     <div class="credits__block">
       <p class="credits__role">Starring</p>
-      <p class="credits__cast">Muhammad Hendrananta</p>
-      <p class="credits__cast">Euis Herlina</p>
+      <p class="credits__cast" data-bind="groom.full"></p>
+      <p class="credits__cast" data-bind="bride.full"></p>
     </div>
 
     <div class="credits__block">
       <p class="credits__role">With love from</p>
-      <p class="credits__cast">Keluarga Bapak Eko Hari<br>&amp; Ibu Tita Anantasari</p>
-      <p class="credits__cast">Keluarga Bapak Caswan Ocim<br>&amp; Ibu Rasminah</p>
+      <p class="credits__cast" data-family="groom"></p>
+      <p class="credits__cast" data-family="bride"></p>
     </div>
 
     <p class="credits__salam">Wassalamu&rsquo;alaikum Warahmatullahi Wabarakatuh</p>
