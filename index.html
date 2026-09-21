@@ -119,17 +119,21 @@
 
     <p class="hero__desc">Two lives, countless memories, and one beautiful promise. Hendra and Euis are ready to begin their greatest chapter together.</p>
 
-    <p class="hero__when"><b>Saturday, 28 November 2026</b><br><span data-bind="venue.name"></span></p>
+    <p class="hero__when">
+      <b>Saturday, 28 November 2026</b>
+      <span data-times></span>
+      <span data-bind="venue.name"></span>
+    </p>
 
     <div class="hero__actions">
-      <a href="#trailer" class="btn btn--primary" data-trailer-link>
+      <button class="btn btn--primary" id="heroTrailer" type="button">
         <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         Watch trailer
-      </a>
-      <button class="btn btn--ghost" data-cal="akad">
-        <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>
-        Save the date
       </button>
+      <a href="#events" class="btn btn--ghost">
+        <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20m1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>
+        Detail acara
+      </a>
     </div>
 
     <p class="hero__premieres">Premieres 28 November 2026</p>
@@ -262,22 +266,6 @@
   <div id="rails"></div>
 </section>
 
-<!-- ══════════ TRAILER ══════════ -->
-<section class="trailer" id="trailer" hidden>
-  <div class="trailer__frame">
-    <img id="trailerThumb" src="assets/img/trailer-thumb.webp" alt="Cuplikan video prewedding" loading="lazy" decoding="async">
-    <div class="trailer__scrim"></div>
-    <div class="trailer__body">
-      <p class="original">H<span>&amp;</span>E Original</p>
-      <h2 class="trailer__title">Official trailer</h2>
-      <button class="playbtn" id="playTrailer" aria-label="Putar trailer">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-      </button>
-      <p class="trailer__cta">Play trailer</p>
-    </div>
-  </div>
-</section>
-
 <!-- ══════════ QUOTE ══════════ -->
 <section class="quote">
   <blockquote>
@@ -405,6 +393,7 @@
   <div class="vmodal__box" id="vmBox"></div>
 </div>
 
+<button class="nudge" id="nudge" type="button" hidden>Lihat detail acara <span aria-hidden="true">&darr;</span></button>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="js/config.js"></script>
