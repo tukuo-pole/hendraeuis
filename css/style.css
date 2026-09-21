@@ -408,6 +408,15 @@ button{font:inherit;color:inherit}
 }
 @keyframes scrollDot{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
 
+/* HP: pemutar musik ada di kiri bawah, jadi animasi scroll
+   dipindah ke kanan bawah, sejajar dengan pemutar */
+@media (max-width:767px){
+  .hero__scroll{
+    left:auto;right:var(--pad);transform:none;
+    bottom:calc(24px + env(safe-area-inset-bottom));
+  }
+}
+
 /* ============================================================
    OPENING + VERSE
    ============================================================ */
