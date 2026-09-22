@@ -29,7 +29,7 @@ window.WEDDING = {
   venue: {
     name: "Arunika",
     address: "Cigugur, Palutungan, Kuningan, Jawa Barat",
-    maps: "https://maps.app.goo.gl/5AwnS6s3ytuk842fA",
+    maps: "https://maps.app.goo.gl/NWe1UzgkxcE7fnAt9",
     // Optional embedded map. Leave "" to hide the map frame.
     mapsEmbed: "https://www.google.com/maps?q=Arunika%20Eatery%20Palutungan%20Kuningan&output=embed"
   },
