@@ -31,7 +31,7 @@ window.WEDDING = {
     address: "Cigugur, Palutungan, Kuningan, Jawa Barat",
     maps: "https://maps.app.goo.gl/NWe1UzgkxcE7fnAt9",
     // Optional embedded map. Leave "" to hide the map frame.
-    mapsEmbed: "https://www.google.com/maps?q=Arunika%20Eatery%20Palutungan%20Kuningan&output=embed"
+    mapsEmbed: "https://www.google.com/maps?q=Arunika%20Garden%20Palutungan%20Kuningan&output=embed"
   },
 
   /* ---------- TRAILER ---------- */
